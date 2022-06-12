@@ -13,6 +13,8 @@ public class GenerateTrigramsTest {
 
     GenerateTrigrams generator;
 
+    TrigramValidator trigramValidator;
+
     @Before
     public void setup() {
         generator = new GenerateTrigrams();
@@ -34,5 +36,10 @@ public class GenerateTrigramsTest {
         assertEquals(2, trigrams.get("wish i").values().size());
         assertEquals("may", trigrams.get("wish i").values().get(0));
         assertEquals("might", trigrams.get("wish i").values().get(1));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void should_throw_exception_if_less_than_three_words_are_used() {
+        trigramValidator =   new TrigramValidator(new String[] { "I", "test" });
     }
 }

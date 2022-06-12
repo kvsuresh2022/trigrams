@@ -34,6 +34,7 @@ public class GenerateTrigrams {
     }
 
 
+    //This method return only to test via  test cases.
    public Map<String, TrigramValidator> generateTrigrams(String input){
       // String input = "I wish I may I wish I might I try to crack program";
        Map<String,TrigramValidator> trigramsMap = new HashMap<String,TrigramValidator>();
